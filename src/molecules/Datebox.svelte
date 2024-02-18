@@ -28,8 +28,8 @@
 
     const day = dayList[date.getDay()].slice(0, 3);
     const month = monthList[date.getMonth()].slice(0, 3);
-    const hour = date.getHours();
-    const minute = date.getMinutes();
+    const hour = (date.getHours() < 10 ? "0" : "") + date.getHours();
+    const minute = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
 </script>
 
 <div class="datebox">

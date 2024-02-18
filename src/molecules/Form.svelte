@@ -1,14 +1,23 @@
 <script>
     import Label from "../atoms/Label.svelte";
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+
+    let taskMessage;
+
+    const handleSubmit = () => {
+        const task = {
+            taskMessage,
+            id: Math.random(),
+        };
+        dispatch("addTask", task);
+    };
 </script>
 
 <div>
     <Label labelMessage="Add A Task" />
-    <form
-        on:submit|preventDefault={() => {
-            console.log("hello");
-        }}
-    >
+    <form on:submit|preventDefault={handleSubmit}>
         <input class="type-main" type="text" placeholder="e.g. Learn Svelte" />
         <input class="type-main" type="submit" value="Add" />
     </form>

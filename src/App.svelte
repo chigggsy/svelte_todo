@@ -5,6 +5,8 @@
     import TaskList from "./molecules/TaskList.svelte";
     import { onMount } from "svelte";
 
+    taskList = [];
+
     // Storing page functions
     let formWrapperHeight = "auto";
     const formWrapperHeightInit = () => {
@@ -30,8 +32,10 @@
         <Statbox labelMessage="10" isComplete />
         <Statbox labelMessage="2" />
     </div>
-    <div class="form_wrapper"><Form /></div>
-    <div class="tasklist_wrapper"><TaskList /></div>
+    <div class="form_wrapper">
+        <Form on:addTask />
+    </div>
+    <div class="tasklist_wrapper"><TaskList {TaskList} /></div>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249 1024" fill="none">
         <path

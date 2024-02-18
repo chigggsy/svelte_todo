@@ -1,8 +1,8 @@
 <script>
-    export let task = "000";
+    export let taskMessage = "000";
 </script>
 
-<p class="type-main">{task}</p>
+<p class="type-main">{taskMessage}</p>
 
 <style>
     p {
